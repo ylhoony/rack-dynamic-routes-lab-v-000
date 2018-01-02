@@ -11,7 +11,7 @@ class Application
 
       if i = @@items.find {|item| item.name == item_name}
         binding.pry
-        res.write "#{e[0].price}"
+        res.write "#{i.price}"
       else
         res.write "Item not found"
         res.status = 400
