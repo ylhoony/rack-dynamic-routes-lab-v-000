@@ -10,9 +10,9 @@ class Application
       # binding.pry
       item_name = req.path.split("/").last
       if e = @@items.select {|item| item.name == item_name}
-        e.price
+        res.write "#{e.price}""
       else
-
+        res.write "Item not found"
       end
     else
       res.write "Route not found"
