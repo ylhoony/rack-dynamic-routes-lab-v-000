@@ -8,7 +8,7 @@ class Application
 
     else
 
-      res.status = 400
+      res.status = 404
     end
     res.finish
   end
