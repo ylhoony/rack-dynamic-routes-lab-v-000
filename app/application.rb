@@ -9,9 +9,10 @@ class Application
     if req.path.match(/items/)
       # binding.pry
       item_name = req.path.split("/").last
-      if e = @@items.select {|item| item.name == item_name}
-        binding.pry
-        res.write "#{e.price}"
+      e = @@items.select {|item| item.name == item_name}
+      if !e.empty?
+        # binding.pry
+        res.write "#{e[0].price}"
       else
         res.write "Item not found"
       end
