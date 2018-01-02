@@ -11,9 +11,7 @@ class Application
       item_name = req.path.split("/").last
       e = @@items.select {|item| item.name == item_name}
       if !e.empty?
-        # binding.pry
         res.write "#{e[0].price}"
-
       else
         res.write "Item not found"
         res.status = 400
