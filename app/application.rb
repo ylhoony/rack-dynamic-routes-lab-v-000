@@ -13,7 +13,7 @@ class Application
       if !e.empty?
         # binding.pry
         res.write "#{e[0].price}"
-        
+
       else
         res.write "Item not found"
         res.status = 400
