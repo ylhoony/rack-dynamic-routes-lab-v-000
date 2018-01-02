@@ -9,7 +9,11 @@ class Application
     if req.path.match(/items/)
       # binding.pry
       item_name = req.path.split("/").last
-      @@items.select {|item| item.name == item_name}
+      if e = @@items.select {|item| item.name == item_name}
+        e.price
+      else
+
+      end
     else
       res.write "Route not found"
       res.status = 404
